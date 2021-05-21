@@ -7,14 +7,29 @@ h1 {
   color: black;
   font-family: calibri;
   font-size: 200%;
+  margin-right: 250px;
+  margin-left:150px;
 }
+
+h3 {
+     margin-right: 250px;
+  margin-left:150px;
+  }
+
 p {
   color: black;
   font-family: calibri;
   font-size: 100%;
+  margin-right: 250px;
+  margin-left:150px;
 }
 
-<p2 style="color:black;
+p2 {
+   margin-right: 250px;
+  margin-left:150px;
+  }
+  
+
 
 </style>
 
@@ -24,18 +39,44 @@ p {
   <br>
 <h2>Introduction</h2>
 
-  <p>Since its inception, the price of NEO has fluctuated violently. Besides interest in the NEO ecosystem itself, are there correlates with other assets, commodities, or indices that can help us to understand why the price has risen and fallen in such an unpredictable manner? In this article, we will use R to investigate potential factors, including factors that crypto analysts typically would not consider, such as commodities, stock indices, and crude oil prices. </p>
-  <p>In particular, the factors we will use R to analyze will include the historical prices of the major crypto benchmarks such as BTC and ETH. We will also look at the two most popular Chinese cryptos for correlations: Binance coin and Tron. We will also use broader indicators of market sentiment such as the Dow Jones International Index, traditional commodities including oil, corn and lumber, and the ultimate traditional inflation hedge, gold. We will begin by using linear regressions to analyze the factors in isolation to see which are most effective individually, then analyze them in multivariate format to see which in combination are most effective. We will be sure to use the vif() function to ensure that multicollinearity is accounted for, that is, that redundancy is not the culprit for the high r-squared, thus negating the statistical significance of our results. In conclusion, these tests will give us the combination of factors that can give us the best representation explaining the rise in interest of the NEO ecosystem and potentially help us to create a model to predict the future direction of NEO.<p1>
+  <p>Since its inception, the price of NEO has fluctuated violently. Besides interest in the NEO ecosystem itself, 
+  are there correlates with other assets, commodities, or indices that can help us to understand why the price has 
+  risen and fallen in such an unpredictable manner? In this article, we will use R to investigate potential factors, 
+  including factors that crypto analysts typically would not consider, such as commodities, stock indices, and crude oil prices. 
+  </p>
+  <p>In particular, the factors we will use R to analyze will include the 
+  historical prices of the major crypto benchmarks such as BTC and ETH. 
+  We will also look at the two most popular Chinese cryptos for correlations: 
+  Binance coin and Tron. We will also use broader indicators of market sentiment 
+  such as the Dow Jones International Index, traditional commodities including oil, 
+  corn and lumber, and the ultimate traditional inflation hedge, gold. 
+  We will begin by using linear regressions to analyze the factors in 
+  isolation to see which are most effective individually, then analyze them in 
+  multivariate format to see which in combination are most effective. 
+  We will be sure to use the vif() function to ensure that multicollinearity 
+  is accounted for, that is, that redundancy is not the culprit for the 
+  high r-squared, thus negating the statistical significance of our results. 
+  In conclusion, these tests will give us the combination of factors that can 
+  give us the best representation explaining the rise in interest of the 
+  NEO ecosystem and potentially help us to create a model to predict the future direction of NEO.
+  <p1>
   <br>
  
 <h2> Discussion  </h2>
-  <p>Typically, the greatest single correlate for a cryptocurrency is with the rest of the crypto market. Here, we use Bitcoin and Ethereum as proxies for the rest of the market. Which of the two coins is NEO more correlated to? We begin by running  a linear regression between NEO and BTC for the 5-year history: </p1>
+  <p>Typically, the greatest single correlate for a cryptocurrency is with the rest of the crypto market. 
+  Here, we use Bitcoin and Ethereum as proxies for the rest of the market. 
+  Which of the two coins is NEO more correlated to? We begin by running 
+  a linear regression between NEO and BTC for the 5-year history: 
+  </p1>
 
-  <p>Surprisingly, the R-squared is just 2.8%, very low! Looking at the chart, we can see a correlation of sorts, but not a very strong one. Perhaps NEO and Ethereum are stronger? After all, NEO has often been branded the “Ethereum of China” before…    </p1>
+  <p>Surprisingly, the R-squared is just 2.8%, very low! Looking at the chart, we can see a correlation of sorts,
+  but not a very strong one. Perhaps NEO and Ethereum are stronger? 
+  After all, NEO has often been branded the “Ethereum of China” before…    
+  </p1>
   <br>
   <br>
-  <b>Exhibit 1: Oil price forecast (2003-30) released in October 2014 by well-known research company   </b>
-  <img src="/1.png" width="60%" >
+  <img src="/j.png" width="60%" >
+  <br>
   <p> What would the 5-year history look like with ETH? </p>
 
 
@@ -49,52 +90,83 @@ p {
   <img src="/2.jpg" width="50%" >
   <br>
 
-  <p>Does the Chinese origin also influence how investors position NEO? Does it possibly make NEO more correlated with the other Chinese cryptos, such as Tron or Binance? We run the regression analyses here to see what they look like. 
-  <b> <br>
-  *(May 2018) Bank of America: Oil prices might spike to $100/bbl in 2019 <br>
-  * In 2018, Deloitte predicted $68-$70/bbl range for 2019-2025 period <br>
-  *	Sanford Bernstein predicts $76/bbl in 2019  <br>
-  *	Goldman: Brent to hit $75/bbl in Q1 2019  <br>
-    Meanwhile, as of December 2019, WTI oil prices remain well below $60.  </b>  </p1>
+  <p>Does the Chinese origin also influence how investors position NEO? 
+  Does it possibly make NEO more correlated with the other Chinese cryptos, 
+  such as Tron or Binance? We run the regression analyses here to see what they look like. 
+  </p>
+  <br>
 
-<h1> How are traditional forecast models for crude oil prices made?    </h2>
+<h1> How are traditional forecast models for crude oil prices made?    </h1>
 
   <p>With Binance Coin, the correlation is not very strong- the R-squared is only 7.4%. Still, it’s more than double that of Bitcoin.     </p1>
-  <p>With TRX however, the correlation is the highest we’ve seen so far, at 44.4%. Therefore, out of all the cryptocurrencies tested, NEO is the most correlated to Tron! So, investors in NEO are most likely to also be investors in Tron, which might say something about the investor base of NEO. They would then be followed by ETH, then Binance, then Bitcoin.  </p1>
-  <p>Well, we know that NEO is aiming to be the platform for digital assets. Therefore, is there any strong correlation with actual physical commodities? As in, transactions in the real world? We examine commonly used proxies for physical commodities here: lumber, corn, DJIA, crude oil, brent.    </p1>
-  <p> Gold is typically seen as the premier commodity used as a hedge against inflation. However, in recent years, some have claimed that its price has been managed, and has not really reflected inflation.    </p1>
-  <p>For Gold:
-    </p1>
+  <p>With TRX however, the correlation is the highest we’ve seen so far, at 44.4%. 
+  Therefore, out of all the cryptocurrencies tested, NEO is the most correlated to Tron! 
+  So, investors in NEO are most likely to also be investors in Tron, which might say something about the investor base of NEO. 
+  They would then be followed by ETH, then Binance, then Bitcoin.  
+  </p1>
+  <p>Well, we know that NEO is aiming to be the platform for digital assets. 
+  Therefore, is there any strong correlation with actual physical commodities? 
+  As in, transactions in the real world? We examine commonly used proxies for physical commodities here: 
+  lumber, corn, DJIA, crude oil, brent.    
+  </p1>
+  <p> Gold is typically seen as the premier commodity used as a hedge against inflation. 
+  However, in recent years, some have claimed that its price has been managed, and has not really reflected inflation.    
+  </p1>
+  <p> For Gold:
+  </p1>
+  
   <br>
-  <br>
-  <b>Exhibit 4: Sample of typical oil price supply and demand model     </b>
+  
   <br>
   <img src="/4.png"  width="60%">
   <br>
 <p> Indeed. The correlation between gold and NEO is just 3%. <p1>
-   <p> For this reason, we venture into other commodities that may more accurately represent the direction of markets in the past few years such as actively traded and consumed commodities, beginning with lumber:<p1>
-     <p> Here is the regression for lumber:<p1>
-<p> The R-squared between lumber and NEO is 13.99%, which is quite high.<p1>
+   <p> For this reason, we venture into other commodities that may more accurately represent 
+   the direction of markets in the past few years such as actively traded and consumed commodities, 
+   beginning with lumber:
+   <p1>
+   <p> Here is the regression for lumber:<p1>
+<p> The R-squared between lumber and NEO is 13.99%, which is quite high.
+<p1>
   <p> Corn: <p1>
     <p> The r-squared between corn and NEO is 4.28%.<p1>
-      <p> Crude oil: <p1>
-        <p> The R-squared between Crude Oil (Brent) and NEO is 10.35%, also quite high.<p1>
-          <p> DJIA: <p1>
-            <p> Lastly, the R-Squared between the Dow Jones Industrial Average and NEO is just .1%, meaning that NEO prices do not appear to track broader stock market prices in a meaningful way, a somewhat surprising finding.<p1>
-              <p> Therefore, on an individual basis, the strongest correlation appears to be with lumber, followed by brent oil, then corn, then lastly, the DJIA.<p1>
-<h1>Multivariate Regression Analyses    </h2>
-  <p> Multivariate Regression Analyses is the process of running a regression analyses using multiple variables. It is similar to running a linear regression, except that it tells us which combination of variables is most responsible for the outcome of a probability equation. The nuance is that we have to make sure that the variables do not suffer from overlap due to inheritance from a common underlying variable- this is known is multicollinearity. We must test for this using the VIF() function.<p1>
-  <p>If we run a linear multivariate regression using multiple cryptocurrencies such as BTC, ETH, and TRX, and throw in a few commodities such as Lumber and Corn, we can achieve an R-squared approaching 90%. <p1>    </p1>
-  <p> However, our multi-collinearity will approach a threshold that is beyond acceptable. <p1>
-    <p> Therefore, to get below the threshold, we must throw out some over-lapping variables, though it appears that any combination of commodities can be chosen, since they do not appear to suffer from multicollinearity effects. <p1>
-      <p> In this case, the optimum combination chose would be Tron, crude oil, and lumber, which can help us to explain 51% of the price variation in NEO. Not too bad. <p1>
-    <br> <br> <hr>
-  <b> Exhibit 5: Example of advanced oil price framework </b>
+
+    <p> Crude oil: <p1>
+    <p> The R-squared between Crude Oil (Brent) and NEO is 10.35%, also quite high.<p1>
+    <p> DJIA: <p1>
+    <p> Lastly, the R-Squared between the Dow Jones Industrial Average and NEO is just .1%, 
+    meaning that NEO prices do not appear to track broader stock market prices in a meaningful way, 
+    a somewhat surprising finding.
+    <p1>
+    <p> Therefore, on an individual basis, the strongest correlation appears to be with lumber, 
+    followed by brent oil, then corn, then lastly, the DJIA.
+    <p1>
+    <h1>Multivariate Regression Analyses    </h2>
+  <p> Multivariate Regression Analyses is the process of running a regression analyses using multiple variables. 
+  It is similar to running a linear regression, except that it tells us which combination of variables is 
+  most responsible for the outcome of a probability equation. 
+  The nuance is that we have to make sure that the variables do not suffer from overlap due to inheritance from a common underlying variable- 
+  this is known is multicollinearity. 
+  We must test for this using the VIF() function.
+  <p1>
+  <p>If we run a linear multivariate regression using multiple cryptocurrencies such as BTC, ETH, and TRX, 
+  and throw in a few commodities such as Lumber and Corn, we can achieve an R-squared approaching 90%. 
+  <p1>
+  <p> However, our multi-collinearity will approach a threshold that is beyond acceptable. 
+  <p1>
+  <p> Therefore, to get below the threshold, we must throw out some over-lapping variables, 
+  though it appears that any combination of commodities can be chosen, 
+  since they do not appear to suffer from multicollinearity effects. 
+  <p1>
+  <p> In this case, the optimum combination chose would be Tron, crude oil, and lumber, 
+  which can help us to explain 51% of the price variation in NEO. Not too bad. 
+  <p1>
+  <br> 
+  <br> 
   <br>
   <br>
   <img src="/5.png" >
   <br>
-<h2> Steps for advanced model:</h2>
   <p> In the advanced model, given the factors and constraints that we have data for, we attempt to find a likely range of oil prices. We start with the price floor, the lowest prices can go before major segments of producers start to capitulate and go bankrupt. Therefore, we start with developing a very strong understanding of the oil producers and their average break-even prices. </p>
 
 <h2> Price Floor:</h2>
