@@ -24,29 +24,24 @@ p {
   <br>
 <h2>Introduction</h2>
 
-  <p>Accurate financial forecasting is one of the most difficult aspects of finance to get right. Finance is littered with forecast models that do not succeed. Though some current day models have moved on from simply assuming exponential growth based on prior year numbers, even when attempting to account for broader industry dynamics, these newer models still fail to account for industry downturns, or significant cyclical events stemming from external locations. </p>
-  <p>Oil prices are one of the most important leading indicators of the world economy, playing an important role in many industrial forecasts. As the price of most energy sources are linked to the price of oil, governments (especially net energy exporters), energy companies, commodity companies, and refineries all rely on oil prices for their sales and cost forecasts. However, the volatile and unpredictable nature of oil prices makes it difficult for entities to plan ahead. As the world gets larger and more complex, oil price financial models must adapt to the added size and complexity of the inputs they are attempting to model by becoming more complex themselves. Though the model size can be overwhelming, artificial intelligence programming and other tools (such as Python) can help, to a degree.<p1>
+  <p>Since its inception, the price of NEO has fluctuated violently. Besides interest in the NEO ecosystem itself, are there correlates with other assets, commodities, or indices that can help us to understand why the price has risen and fallen in such an unpredictable manner? In this article, we will use R to investigate potential factors, including factors that crypto analysts typically would not consider, such as commodities, stock indices, and crude oil prices. </p>
+  <p>In particular, the factors we will use R to analyze will include the historical prices of the major crypto benchmarks such as BTC and ETH. We will also look at the two most popular Chinese cryptos for correlations: Binance coin and Tron. We will also use broader indicators of market sentiment such as the Dow Jones International Index, traditional commodities including oil, corn and lumber, and the ultimate traditional inflation hedge, gold. We will begin by using linear regressions to analyze the factors in isolation to see which are most effective individually, then analyze them in multivariate format to see which in combination are most effective. We will be sure to use the vif() function to ensure that multicollinearity is accounted for, that is, that redundancy is not the culprit for the high r-squared, thus negating the statistical significance of our results. In conclusion, these tests will give us the combination of factors that can give us the best representation explaining the rise in interest of the NEO ecosystem and potentially help us to create a model to predict the future direction of NEO.<p1>
   <br>
-  <br>
-  <b>What does an advanced forecast model look at?</b>
+ 
+<h2> Discussion  </h2>
+  <p>Typically, the greatest single correlate for a cryptocurrency is with the rest of the crypto market. Here, we use Bitcoin and Ethereum as proxies for the rest of the market. Which of the two coins is NEO more correlated to? We begin by running  a linear regression between NEO and BTC for the 5-year history: </p1>
 
-  <br>
-  <p>A simple financial forecast looks at factors that ultimately influence the forecast figure in question. An advanced model looks at the factors that influence the factors- a step-up in complexity. Consider a model that predicts company bankruptcy â€“ would simply looking at a companyâ€™s historical internal financial data be sufficient? No- one would need to look at the external factors as well that may impact the companyâ€™s internal figures-  industry dynamics, government, central bank policy, etc. and understand how these factors ultimately interact with each other!</p1>
-
-<h2> Examples of wrong predictions </h2>
-  <p>Despite the importance of oil prices, many of the best-known oil price forecasters consistently seem to get them wrong. </p1>
-
-  <p>The forecast below was made in October 2014 by a well-known economic research company. Following the oil price crash that began in 2014, it stated that oil prices would rapidly rebound and increase steadily into the future, and easily top $100/ bbl again within 4 years time. Forecasts predicting a rapid rebound like this were very common and generally accepted during this timeframe.    </p1>
+  <p>Surprisingly, the R-squared is just 2.8%, very low! Looking at the chart, we can see a correlation of sorts, but not a very strong one. Perhaps NEO and Ethereum are stronger? After all, NEO has often been branded the “Ethereum of China” before…    </p1>
   <br>
   <br>
   <b>Exhibit 1: Oil price forecast (2003-30) released in October 2014 by well-known research company   </b>
   <img src="/1.png" width="60%" >
-  <p> (Note: WTI stands for West Texas Intermediate, and is used to describe the type of oil typically for sale in West Texas. It represents the North American price of oil. Brent refers to the Brent Oil Field in the North Sea off of the coast of the UK, and represents the international price of oil. Note that Brent is usually about $2-$10 dollars more expensive than WTI, but the spread changes everyday: https://ycharts.com/indicators/brent_wti_spread. The current spread is about $5-$7/bbl.) For the purposes of this article, all oil prices are assumed to be WTI unless otherwise specified. </p>
+  <p> What would the 5-year history look like with ETH? </p>
 
 
 
 
-  <p>In the name of giving clients assurance about the future, there is generally an optimism bias that pervades many corporate forecasts. However, the forecast in Exhibit 1 dramatically underestimated the depth of the oil price crash that begin in 2014, whereby the price cratered to $28/bbl in early 2016. Unlike in the forecast, oil prices continue to lag below $60/bbl, well below the $100+ level forecast to be achieved by 2016.    </p1>
+  <p>Indeed, the chart correlation looks much stronger. In fact, the R-squared is much more correlated, at 36.36% for the entire history. Therefore, those calling NEO the “ETH of China” may be onto something.    </p1>
   <br>
   <br>
   <b>Exhibit 2: Actual WTI Oil Prices (2009- present)    </b>
@@ -54,7 +49,7 @@ p {
   <img src="/2.jpg" width="50%" >
   <br>
 
-  <p>This well-known forecaster is not alone in making such overly- simplistic forecasts, many of which sound like the following:
+  <p>Does the Chinese origin also influence how investors position NEO? Does it possibly make NEO more correlated with the other Chinese cryptos, such as Tron or Binance? We run the regression analyses here to see what they look like. 
   <b> <br>
   *(May 2018) Bank of America: Oil prices might spike to $100/bbl in 2019 <br>
   * In 2018, Deloitte predicted $68-$70/bbl range for 2019-2025 period <br>
@@ -64,12 +59,11 @@ p {
 
 <h1> How are traditional forecast models for crude oil prices made?    </h2>
 
-  <p>A traditional model for oil and gas is typically based off of supply and demand fundamentals, whereby the modeler will assume that there is an interplay between supply and demand which affects the price of oil. Given the multitude of parties on both sides, this is already a fairly complex model. For example, when crude supply builds up, the price will expect to decrease due to over-supply. However, when there are larger-than-expected draws on the crude inventory (an indication of increasing demand), the price will rise.     </p1>
-  <p>On the supply side, the major suppliers will be examined for their current and expected levels of production. A modeler will also look at drilling rig count as an indicator of production activity, their production inventory, and what projects they may have coming online or going offline. They will do this for every major supplier, such as the US, Russia, Saudi Arabia, and OPEC .    </p1>
-  <p>Sometimes, a geopolitical bent is added, whereby forecasters will also look for events which may cause disruptions to supply, such as a war breaking out, an attack on a pipeline, countries looking to restrain supply, etc. There is an assumption that suppliers are in a battle for market share, with everyone looking to advance market share while obtaining the highest price possible.     </p1>
-  <p>For traditional forecasters, the demand side is typically simpler than the supply side. Demand for crude oil is generally considered quite stable, and fairly closely tied to GDP growth rates. Therefore, looking at whether the global economy is in a growth or contraction phase, based on GDP figures, is enough to make a short-term prediction on oil demand. Sometimes, a more macro view will be examined, such as accounting for energy transitions, for example the impact of electric vehicles, legislation pertaining to â€˜climate changeâ€™, impact of growth of renewable energy sources, etc.    </p1>
-  <p>In general, the supply and demand sides, however, are kept separate.  GDP is GDP, while suppliers have their own issues to worry about. Again, the main driver of price determination is the oil supply and demand balance. According to these traditional models, if oil supply is greater than oil demand, this is enough to nudge the oil price to fall. Conversely, if demand is greater than price, then the oil price is expected to rise.
-  See Exhibit 4 below for an example.
+  <p>With Binance Coin, the correlation is not very strong- the R-squared is only 7.4%. Still, it’s more than double that of Bitcoin.     </p1>
+  <p>With TRX however, the correlation is the highest we’ve seen so far, at 44.4%. Therefore, out of all the cryptocurrencies tested, NEO is the most correlated to Tron! So, investors in NEO are most likely to also be investors in Tron, which might say something about the investor base of NEO. They would then be followed by ETH, then Binance, then Bitcoin.  </p1>
+  <p>Well, we know that NEO is aiming to be the platform for digital assets. Therefore, is there any strong correlation with actual physical commodities? As in, transactions in the real world? We examine commonly used proxies for physical commodities here: lumber, corn, DJIA, crude oil, brent.    </p1>
+  <p> Gold is typically seen as the premier commodity used as a hedge against inflation. However, in recent years, some have claimed that its price has been managed, and has not really reflected inflation.    </p1>
+  <p>For Gold:
     </p1>
   <br>
   <br>
@@ -77,11 +71,24 @@ p {
   <br>
   <img src="/4.png"  width="60%">
   <br>
-<h1>Why does the traditional forecast model fail?    </h2>
-  <p> As we saw in the section above, however, models based primarily on supply and demand have consistently failed to be accurate in recent years. What are these models missing? Perhaps they are over-simplified and do not go deep enough into the intricacies of the involved parties, nor do they account for seeing how everything is tied together?  The increased complexity and inter-connectedness of the world might indicate that a new type of model is needed. If so, what would that model look like?   </p1>
-<h2>Advanced model for oil prices    </h2>
-  <p>In the advanced model, we have increased the complexity of the model. We take a much closer look at the financials of the buyers and suppliers, and find that the world is more intertwined than we previously thought. Suppliers have their break-even production costs which set a floor to the oil price. The sellerâ€™s health affects the buyerâ€™s ability to buy- sellers produce jobs for buyers, and their national budgets affect the economic health of the buyers. Central banks are the glue which holds the energy ecosystem together, and their policies have a dramatic effect on the demand for oil. Note that this sort of model requires an increase in the level of complexity to account for the additional variables. We need more data. Luckily, much of this data is publicly available.    </p1>
-  <br> <br> <hr>
+<p> Indeed. The correlation between gold and NEO is just 3%. <p1>
+   <p> For this reason, we venture into other commodities that may more accurately represent the direction of markets in the past few years such as actively traded and consumed commodities, beginning with lumber:<p1>
+     <p> Here is the regression for lumber:<p1>
+<p> The R-squared between lumber and NEO is 13.99%, which is quite high.<p1>
+  <p> Corn: <p1>
+    <p> The r-squared between corn and NEO is 4.28%.<p1>
+      <p> Crude oil: <p1>
+        <p> The R-squared between Crude Oil (Brent) and NEO is 10.35%, also quite high.<p1>
+          <p> DJIA: <p1>
+            <p> Lastly, the R-Squared between the Dow Jones Industrial Average and NEO is just .1%, meaning that NEO prices do not appear to track broader stock market prices in a meaningful way, a somewhat surprising finding.<p1>
+              <p> Therefore, on an individual basis, the strongest correlation appears to be with lumber, followed by brent oil, then corn, then lastly, the DJIA.<p1>
+<h1>Multivariate Regression Analyses    </h2>
+  <p> Multivariate Regression Analyses is the process of running a regression analyses using multiple variables. It is similar to running a linear regression, except that it tells us which combination of variables is most responsible for the outcome of a probability equation. The nuance is that we have to make sure that the variables do not suffer from overlap due to inheritance from a common underlying variable- this is known is multicollinearity. We must test for this using the VIF() function.<p1>
+  <p>If we run a linear multivariate regression using multiple cryptocurrencies such as BTC, ETH, and TRX, and throw in a few commodities such as Lumber and Corn, we can achieve an R-squared approaching 90%. <p1>    </p1>
+  <p> However, our multi-collinearity will approach a threshold that is beyond acceptable. <p1>
+    <p> Therefore, to get below the threshold, we must throw out some over-lapping variables, though it appears that any combination of commodities can be chosen, since they do not appear to suffer from multicollinearity effects. <p1>
+      <p> In this case, the optimum combination chose would be Tron, crude oil, and lumber, which can help us to explain 51% of the price variation in NEO. Not too bad. <p1>
+    <br> <br> <hr>
   <b> Exhibit 5: Example of advanced oil price framework </b>
   <br>
   <br>
