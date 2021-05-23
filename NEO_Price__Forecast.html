@@ -192,13 +192,13 @@ p3 {
   and throw in a few commodities such as Lumber and Corn, we can achieve an R-squared approaching 90%. 
   </p>
   <p3> Residual standard error: 11.17 on 901 degrees of freedom
-Multiple R-squared:  0.8535,	Adjusted R-squared:  0.8522 
+Multiple R-squared:  0.8535,	Adjusted R-squared:  0.8522 <br>
 F-statistic: 656.1 on 8 and 901 DF,  p-value: < 2.2e-16
   </p3>
   <p> However, our multi-collinearity will approach a threshold that is beyond acceptable. 
   </p>
   <p3>
-    data$ETH    data$BTC data$Lumber    data$BNB    data$TRX   data$DJIA  data$Brent   data$Corn 
+    data$ETH    data$BTC data$Lumber    data$BNB    data$TRX   data$DJIA  data$Brent   data$Corn <br>
     17.980369   19.008947    6.183506    4.504967    3.166828    4.191164    1.476786    5.305859
     </p3>
     
@@ -210,7 +210,7 @@ F-statistic: 656.1 on 8 and 901 DF,  p-value: < 2.2e-16
   which can help us to explain 56% of the price variation in NEO. Not too bad. 
   </p>
     <p3>
-      data$Lumber    data$TRX   data$DJIA  data$Brent   data$Corn 
+      data$Lumber    data$TRX   data$DJIA  data$Brent   data$Corn <br>
    3.699971    1.931040    2.838525    1.208790    3.270502 
     </p3>
   <p>In other words, if we can forecast these 3 factors, then we can forecast over 50% of the price variation in NEO. 
@@ -229,18 +229,13 @@ F-statistic: 656.1 on 8 and 901 DF,  p-value: < 2.2e-16
   which are often telegraphed. See here for an article I wrote previously on how oil prices can be forecast effectively. 
   </p>
   
-  <p>
+ 
   <p> 1) Lumber - Tron - DJIA - Crude Oil- Corn (56.91%) </p>
   <p> 2) Tron- Lumber- Crude Oil- Corn (51.42%) </p>
   <p> 3) Crude Oil-Lumber-Corn-Gold (38.05%) </p>
   <p> 4) Lumber - Corn - Crude Oil (28%)</p>
-    Tron-Crude Oil-Corn-Lumber
-51.42%
-Crude Oil-Lumber-Corn
-28.15%
-Crude Oil-Lumber-Corn-Gold
-38.05%
-  </p>
+  
+ 
   <p>
     The optimum combination would be Lumber + Crude Oil + Corn + Gold. 
     The 4 combined have an R-squared of 38%. Not great, but not bad either. 
