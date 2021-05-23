@@ -148,7 +148,8 @@ p4 {
   As in, transactions in the real world? We examine commonly used proxies for physical commodities here, starting with gold:   
   </p>
   <p> Gold is typically seen as the premier barometer for inflation. 
-  However, in recent years, some have claimed that its price has been 'managed,' and therefore has not accurately reflected the true rate of inflation.    
+  However, in recent years, some have claimed that its price has been 'managed,' and therefore has not accurately reflected the 
+    true rate of inflation.    
   </p>
   <p> The chart for Gold is below:
   </p>
@@ -216,7 +217,8 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
   <p>
     From a purely observational perspective, this information is actually quite valuable. Generally speaking, 
     an r-squared correlation above 80% provides means that our model provides a high degree of confidence that our variables, in aggregate, are 
-    accurately predicting our desired outcome, which is the price. Running the vif() function on the dataset, however, shows that there high multicollinearity between the variables,
+    accurately predicting our desired outcome, which is the price. Running the vif() function on the dataset, however, shows 
+    that there is high multicollinearity between the variables,
     which is really not a surprise since we know that many of the variables are bound to move together 
     (i.e. the cryptos often move together, as do commodities). Therefore, they aren't truly independent. 
      <p>
@@ -226,11 +228,11 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
           </p3>
     </p>
     <p> We can see from the above that the VIF for ETH and BTC are well above 5, as are Lumber and Corn. 
-      For modelling purposes, however. this doesn't really matter to us. 
-      After all, if we are looking to just accurately model and forecast the price of NEO, then it doesn't really matter to us if 
-      ETH and BTC are dependent on the same factors. That said, however, as analysts, we do care that these factors are not 
+      For informational purposes, however. this doesn't really matter to us. 
+      After all, if we are looking to just understand the price of NEO, then it doesn't really matter to us if 
+      ETH and BTC are dependent on the same factors. That said, however, as forecasters, we do care that these factors are not 
       truly independent, because it is hard for us to forecast these factors in isolation. After all, we are looking to forecast 
-      the price of NEO, but if we can't forecast the price of ETH or BTC or Tron in isolation, then this model is of 
+      the price of NEO, but if we can't forecast the price of ETH, BTC or Tron in isolation, then this model is of 
       little or no use to us. Therefore, we should remove these factors until we can get to a model that contains factors that
       are independent and that we feel comfortable analyzing and forecasting in isolation.  
        <p>    
