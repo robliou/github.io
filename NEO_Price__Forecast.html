@@ -191,17 +191,21 @@ p3 {
   <p>If we run a linear multivariate regression using multiple cryptocurrencies such as BTC, ETH, and TRX, 
   and throw in a few commodities such as Lumber and Corn, we can achieve an R-squared approaching 90%. 
   </p>
+<p>
   <p3> Residual standard error: 11.17 on 901 degrees of freedom
 Multiple R-squared:  0.8535,	Adjusted R-squared:  0.8522 <br>
 F-statistic: 656.1 on 8 and 901 DF,  p-value: < 2.2e-16
   </p3>
-  <p> However, our multi-collinearity will approach a threshold that is beyond acceptable. 
+    </p>
+
+    <p> However, our multi-collinearity will approach a threshold that is beyond acceptable. 
   </p>
+    <p>
   <p3>
     data$ETH    data$BTC data$Lumber    data$BNB    data$TRX   data$DJIA  data$Brent   data$Corn <br>
     17.980369   19.008947    6.183506    4.504967    3.166828    4.191164    1.476786    5.305859
     </p3>
-    
+    <p/>
     <p> Therefore, to get below the threshold, we must throw out some over-lapping variables, 
   though it appears that any combination of commodities can be chosen, 
   since they do not appear to suffer from multicollinearity effects. 
