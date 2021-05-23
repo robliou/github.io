@@ -34,7 +34,14 @@ p2 {
   margin-left:150px;
   }
   
-
+p3 {
+  color: black;
+  font-family: Courier New;
+  font-size: 100%;
+  margin-right: 250px;
+  margin-left:150px;
+}
+  
 
 </style>
 
@@ -184,9 +191,18 @@ p2 {
   <p>If we run a linear multivariate regression using multiple cryptocurrencies such as BTC, ETH, and TRX, 
   and throw in a few commodities such as Lumber and Corn, we can achieve an R-squared approaching 90%. 
   </p>
+  <p3> Residual standard error: 11.17 on 901 degrees of freedom
+Multiple R-squared:  0.8535,	Adjusted R-squared:  0.8522 
+F-statistic: 656.1 on 8 and 901 DF,  p-value: < 2.2e-16
+  </p3>
   <p> However, our multi-collinearity will approach a threshold that is beyond acceptable. 
   </p>
-  <p> Therefore, to get below the threshold, we must throw out some over-lapping variables, 
+  <p3>
+    data$ETH    data$BTC data$Lumber    data$BNB    data$TRX   data$DJIA  data$Brent   data$Corn 
+    17.980369   19.008947    6.183506    4.504967    3.166828    4.191164    1.476786    5.305859
+    </p3>
+    
+    <p> Therefore, to get below the threshold, we must throw out some over-lapping variables, 
   though it appears that any combination of commodities can be chosen, 
   since they do not appear to suffer from multicollinearity effects. 
   </p>
@@ -210,6 +226,10 @@ p2 {
   </p>
   
   <p>
+  <p> 1) Lumber - Tron - DJIA - Crude Oil- Corn (56.91%) </p>
+  <p> 2) Tron- Lumber- Crude Oil- Corn (51.42%) </p>
+  <p> 3) Crude Oil-Lumber-Corn-Gold (38.05%) </p>
+  <p> 4) Lumber - Corn - Crude Oil (28%)</p>
     Tron-Crude Oil-Corn-Lumber
 51.42%
 Crude Oil-Lumber-Corn
@@ -245,12 +265,13 @@ Crude Oil-Lumber-Corn-Gold
   <p> 4) Gold (3%) </p>
   <p> 5) Stocks (DJIA) (.1%) </p>
   <p> From a multivariable perspective, the most effective way to forecast the price of NEO would be to forecast the prices of  </p>
-  <p> 1) Brent-Lumber-Corn-Gold (38.05%) </p>
-  <p> 2) Tron- Lumber- Crude- Oil- Corn (%) </p>
-  <p> 3) Lumber - Gold - Oil (%)</p>
+  <p> 1) Lumber - Tron - DJIA - Crude Oil- Corn (56.91%) </p>
+  <p> 2) Tron- Lumber- Crude Oil- Corn (51.42%) </p>
+  <p> 3) Crude Oil-Lumber-Corn-Gold (38.05%) </p>
+  <p> 4) Lumber - Corn - Crude Oil (28%)</p>
   <p> Forecasting the latter may be more feasible and may be more feasible. 
     For example, here is an example I wrote previously on forecasting the price of oil. 
-    Future articles may focus on forecasting the price of other other commodities as well. 
+    However, future articles will focus on forecasting the price of other commodities singularly and in aggregate as well. 
     In the meantime, I welcome any feedback you may have! </p>
   <p>The fact that we cannot use commodities or other cryptos to forecast the price of NEO is also a good thing- 
     it tells us NEO does have its own pricing mechanisms that determine its own direction, irrespective of broader market trends. 
