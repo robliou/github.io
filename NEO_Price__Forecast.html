@@ -202,9 +202,17 @@ p4 {
   We therefore must test for this using the VIF() function (Variable Independence Factor). If the VIF of any of the individual variables exceeds, 5,
   then generally there it means that the variables are not independent from each other and  
   </p>
-  <p>If we run a linear multivariate regression using multiple cryptocurrencies such as BTC, ETH, and TRX, 
-  and throw in a few commodities such as Lumber and Corn, we can achieve an R-squared approaching 85%. 
+  <p>If we run a linear multivariate regression throwing the whole kitchen sink at NEO, that is 
+    all of multiple cryptocurrencies such as BTC, ETH, BNB and TRX, 
+  and throwing as well multiple commodities such as Lumber, Crude Oil, Gold and Corn, we can achieve an R-squared approaching 85%. 
   </p>
+  <p>
+    <p3>
+          new_data <- lm(data$NEO ~  data$BTC + data$ETH+ data$TRX + <br>
+          data$BNB + data$Lumber +   data$Brent +  data$Gold +  data$Corn + data$DJIA, data=data)
+    </p3>
+  </p>
+
 <p>
   <p3> Residual standard error: 11.17 on 901 degrees of freedom
 Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522 
