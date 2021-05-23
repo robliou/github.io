@@ -88,24 +88,25 @@ p4 {
 <h2> Discussion  </h2>
   </p>
 
-  <p>Typically, the greatest single correlate for a cryptocurrency is with the rest of the crypto market. After 
-    all, it seems like when Bitcoin or Ethereum rises or falls, the rest of the market seems to follow. 
+  <p>Typically, the greatest correlate for a cryptocurrency is generally with the rest of the crypto market. After 
+    all, it seems like when Bitcoin or Ethereum rises or falls, the rest of the market seems to follow along. 
     But which one has the greater effect on NEO?
   Here, we use Bitcoin and Ethereum as proxies for the rest of the market. 
    We begin by running 
   a linear regression between NEO and BTC for the near 5-year period from September 2016 to April 2021: 
   </p>
 
-  <p>Surprisingly, the R-squared is just 2.8%, which is quite low. Looking at the chart, we can see a correlation of sorts,
-  but not a very strong one at all.   
-  </p>
-  <br>
+     <b> Exhibit A: Linear regression between NEO and Bitcoin (9/2017-4/2021) </b> </p>
+  <img src="/A.jpg" width="60%" style = "margin-left: 150px;">
   
   <img src="/J.jpg" width="60%" style = "margin-left: 150px;">
   <br>
 <p>
-    <b> Exhibit A: Linear regression between NEO and Bitcoin (9/2017-4/2021) </b> </p>
-  <img src="/A.jpg" width="60%" style = "margin-left: 150px;">
+ <p>Surprisingly, the R-squared is just 2.8%, which is quite low. Looking at the chart, we can see a correlation of sorts,
+  but not a very strong one at all.   
+  </p>
+  <br>
+
     
     <p> Perhaps NEO and Ethereum are more correlated? 
   After all, NEO has often been branded the “Ethereum of China” before…  What would the 5-year history look like with ETH? </p>
@@ -113,15 +114,15 @@ p4 {
 
 
 
-  <p>Indeed, the chart correlation looks much stronger. 
-    In fact, the R-squared is much more correlated, at 36.36% for the entirety of their history. 
-    Therefore, those calling NEO the “ETH of China” may be onto something.   
-  </p>
   
 <p>
     <b> Exhibit B: Linear regression between NEO and ETH (9/2017-4/2021) </b> </p>
 <img src="/B.jpg" width="60%" style = "margin-left: 150px;">
-
+<p>Indeed, the chart correlation looks much stronger. 
+    In fact, the R-squared is much more correlated, at 36.36% for the entirety of their history. 
+    Therefore, those calling NEO the “ETH of China” may be onto something.   
+  </p>
+  
   
 <p>Does the Chinese origin of NEO also influence how investors position it in their portfolios?
   Does it possibly make NEO more correlated with the other Chinese cryptocurrencies, 
@@ -146,8 +147,8 @@ p4 {
   Therefore, is there any strong correlation with actual physical commodities? 
   As in, transactions in the real world? We examine commonly used proxies for physical commodities here, starting with gold:   
   </p>
-  <p> Gold is typically seen as the premier barometer of inflation. 
-  However, in recent years, some have claimed that its price has been managed, and has not accurately reflected actual inflation.    
+  <p> Gold is typically seen as the premier barometer for inflation. 
+  However, in recent years, some have claimed that its price has been 'managed,' and therefore has not accurately reflected the true rate of inflation.    
   </p>
   <p> The chart for Gold is below:
   </p>
@@ -158,8 +159,7 @@ p4 {
   <br>
   
  <p> Indeed. The R-squared correlation between Gold and NEO is just 3%. </p>
-   <p> For this reason, we venture into other commodities that may more accurately represent 
-   the direction of markets in the past few years such as actively traded and consumed commodities, 
+   <p> For this reason, we venture into other more actively traded and consumed commodities, 
    beginning with Lumber.
    </p>
    <p> Here is the regression for Lumber:</p>
@@ -168,17 +168,17 @@ p4 {
      <img src="/F.png" width="60%" style = "margin-left: 150px;">
 <p> The R-squared between Lumber and NEO is 13.99%, which is quite high and possibly more representative of actual inflation than Gold.
 </p>
-  <p> Corn: </p>
+  <p> We use Corn as a proxy for inflation of agriculture/ food prices: </p>
 <p>
     <b> Exhibit G: Linear regression between NEO and Corn (9/2017-4/2021) </b> </p>
       <img src="/G.png" width="60%" style = "margin-left: 150px;">
-    <p> We use Corn as a proxy for inflation of agriculture/ food prices. The r-squared between Corn and NEO is 4.28%.</p>
+    <p>  The r-squared between Corn and NEO is 4.28%.</p>
 
-    <p> Crude oil: </p>
+    <p> We use Crude oil (Brent) as a proxy for the index of energy prices: </p>
 <p>
     <b> Exhibit H: Linear regression between NEO and Crude Oil (Brent) (9/2017-4/2021) </b> </p>
         <img src="/H.png" width="60%" style = "margin-left: 150px;">
-    <p> We use Crude oil (Brent) as a proxy for inflation of energy prices. The R-squared between Crude Oil (Brent) and NEO is 10.35%, also quite high.</p>
+    <p> The R-squared between Crude Oil (Brent) and NEO is 10.35%, also quite high.</p>
 <p>
     <b> Exhibit H: Linear regression between NEO and Crude Oil (Brent) (9/2017-4/2021) </b> </p>
         <img src="/I.png" width="60%" style = "margin-left: 150px;">
@@ -197,15 +197,15 @@ p4 {
   <p> Multivariate Regression Analyses is the process of running a regression analyses using multiple variables. 
   It is similar to running a linear regression, except that it tells us which combination of variables is 
   most responsible for the outcome of a probability equation. 
-  The nuance is that we have to make sure that the variables do not suffer from overlap due to inheritance from a common underlying variable- 
-  this is known is multicollinearity. 
+  The nuance is that we have to make sure that the variables do not suffer from overlap due to inheritance from a common underlying variable. 
+  This is known is multicollinearity. 
   We therefore must test for this using the VIF() function (Variable Independence Factor). If the VIF of any of the individual variables 
     exceeds 5,
-  then generally there it means that the variables are not independent from each other.   
+  then generally this means that the variables are not independent from each other.   
   </p>
   <p>If we run a linear multivariate regression throwing the whole kitchen sink at NEO, that is, including as independent variables  
     all of the cryptocurrencies including BTC, ETH, BNB and TRX, 
-   as well as all of the commodoties Lumber, Crude Oil, Gold and Corn, we can actually build a decent model,
+   as well as all of the commodities including Lumber, Crude Oil, Gold and Corn, we can actually build a decent model,
     achieving an R-squared exceeding 85%:  
   </p>
 <p>
@@ -214,11 +214,11 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
   </p3>
     </p>
   <p>
-    From a purely observational perspective, this information is valuable. Generally speaking, 
-    an r-squared correlation above 80% provides a high degree of confidence that our variables are 
-    accurate predictors of the outcome. Running the vif() function on the dataset shows that there high multicollinearity between the variables,
-    which is not a surprise since we know that many of the variables often move together 
-    (i.e. cryptos often move together, as do commodities).
+    From a purely observational perspective, this information is actually quite valuable. Generally speaking, 
+    an r-squared correlation above 80% provides means that our model provides a high degree of confidence that our variables, in aggregate, are 
+    accurately predicting our desired outcome, which is the price. Running the vif() function on the dataset, however, shows that there high multicollinearity between the variables,
+    which is really not a surprise since we know that many of the variables are bound to move together 
+    (i.e. the cryptos often move together, as do commodities). Therefore, they aren't truly independent. 
      <p>
          <p3>
             data$ETH    data$BTC data$Lumber    data$BNB    data$TRX   data$DJIA  data$Brent   data$Corn <br>
@@ -227,25 +227,20 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
     </p>
     <p> We can see from the above that the VIF for ETH and BTC are well above 5, as are Lumber and Corn. 
       For modelling purposes, however. this doesn't really matter to us. 
-      If we are looking to just accurately model and forecast the price of NEO, then it doesn't really matter to us if 
+      After all, if we are looking to just accurately model and forecast the price of NEO, then it doesn't really matter to us if 
       ETH and BTC are dependent on the same factors. That said, however, as analysts, we do care that these factors are not 
       truly independent, because it is hard for us to forecast these factors in isolation. After all, we are looking to forecast 
       the price of NEO, but if we can't forecast the price of ETH or BTC or Tron in isolation, then this model is of 
-      little or no use to us. Therefore, we should remove these factors until we get to a model that contains factors that
-      we are independent and that we feel comfortable analyzing and forecasting.  
+      little or no use to us. Therefore, we should remove these factors until we can get to a model that contains factors that
+      are independent and that we feel comfortable analyzing and forecasting in isolation.  
        <p>    
-      As predicting the prices of ETH and BTC are hard enough as it is;
-      is it possible to predict the price of NEO using other factors?
+      So, if we remove factors until we are left with a model we are comfortable with, will it still have
+         predictive value? 
   </p>
-    <p>
-  
-    <p/>
-    <p> Therefore, to get below the threshold of 5 , we must throw out some over-lapping variables, 
-  though it appears that most any combination of commodities can be chosen, 
-  since they do appear to suffer less from multicollinearity effects. 
-  </p>
+
   <p> In this case, the optimum combination not including ETH or BTC would be  Lumber - Tron - DJIA - Crude Oil- Corn 
-  which can help us to explain 56% of the price variation in NEO. Not too bad. 
+  which can help us to explain 56% of the price variation in NEO. Meanwhile, the multicollinearity between all 
+    variables would be below 5. Not too bad.
   </p>
   <p>
     <p3>
@@ -253,9 +248,9 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
    3.699971    1.931040    2.838525    1.208790    3.270502 
     </p3>
   </p>  
-<p>In other words, if we can forecast these 5 factors, then we can forecast over 50% of the price variation in NEO. 
-    However, since forecasting the price variation of Tron might be difficult, what combination 
-    would give us the highest R-squared that only included commodities?
+<p>In other words, if we can forecast these 5 factors, then we can forecast over 56% of the price variation in NEO. 
+    However, since forecasting the price variation of Tron might be difficult, what combination that only included commodities
+    would give us the highest R-squared value ?
 </p>
 <p>
     <b> Exhibit A: Multivariate regression between NEO and various combinations (9/2017-4/2021) </b> </p>
@@ -275,8 +270,7 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
   <p>
     The optimum combination model of #1, or Lumber + Crude Oil + Corn + Gold. 
     The 4 variables combined have an R-squared of 38%. Not great, but not bad either. 
-    Since forecasting the price of commodities is much more do-able, I will post an article on how to do that in the future. 
-    In the meantime, again <a href = "https://flashrob01.github.io/oilprice.html" style = "margin-left": 150px;" > here </a> is an article on forecasting the price of oil.
+   Again, <a href = "https://flashrob01.github.io/oilprice.html" style = "margin-left": 150px;" > here </a> is an article on forecasting the price of oil.
   </p>
  
   <p>
@@ -305,13 +299,14 @@ of the price variation with the price of NEO from its inception. In layman's ter
   <p> 2) Lumber- Tron- Crude Oil- Corn (51.42%) </p>
   <p> 3) Lumber - Crude Oil- Corn-Gold (38.05%) </p>
   <p> 4) Lumber - Crude Oil- Corn (28%)</p>
-  <p> Forecasting the latter 2 combinations may be more feasible since they exclude forecasting the price of Tron. 
+  <p> Forecasting the latter 2 combinations may be more feasible since they exclude forecasting the price of Tron or any other cryptocurrency. 
   Future articles may focus on forecasting the price of other commodities singularly and in aggregate, as well as attempt
     to forecast the price of other cryptos. 
   
    
       </p>
-      <p>  In the meantime, I welcome any feedback you may have. </p>
+      <p>  In the meantime, I welcome any feedback you may have. Feel free to email me at robliou01@gmail.com with any questions or comments you may have and thanks for reading.</p>
+
  
     
     
