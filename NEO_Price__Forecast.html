@@ -220,7 +220,7 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
     accurately predicting our desired outcome, which is the price. Running the vif() function on the dataset, however, shows 
     that there is high multicollinearity between the variables,
     which is really not a surprise since we know that many of the variables are bound to move together 
-    (i.e. the cryptos often move together, as do commodities). Therefore, they aren't truly independent. 
+    (i.e. cryptos often move together as a group, as do commodities). Therefore, they aren't truly independent. 
      <p>
          <p3>
             data$ETH    data$BTC data$Lumber    data$BNB    data$TRX   data$DJIA  data$Brent   data$Corn <br>
@@ -264,17 +264,14 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
   which are often telegraphed. See <a href = "https://flashrob01.github.io/oilprice.html" style = "margin-left": 150px;" > here </a> for an article I wrote previously on how oil prices can be forecast effectively. 
   </p>
    
- <p> Therefore, excluding any model that includes forecasting the price of Tron would leave:</p>
+ <p> Therefore, excluding any model that includes forecasting the price of Tron or DJIA would leave:</p>
   <p> 1) Lumber - Crude Oil -Corn-Gold (38.05%) </p>
   <p> 2) Lumber - Corn - Crude Oil (28%)</p>
     
     
   <p>
-    The optimum combination model of #1, or Lumber + Crude Oil + Corn + Gold. 
-    The 4 variables combined have an R-squared of 38%. Not great, but not bad either. 
-   Again, <a href = "https://flashrob01.github.io/oilprice.html" style = "margin-left": 150px;" > here </a> is an article on forecasting the price of oil.
-  </p>
- 
+    Option #1 composed of Lumber + Crude Oil + Corn has an R-squared of 38%- Not great, but not bad either. 
+    
   <p>
   <h2> Summary </h2>
   </p>
@@ -291,9 +288,9 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
   <p> 4) Gold (3%) </p>
   <p> 5) Stocks (DJIA) (.1%) </p>
       <p> From a <b> multivariable </b> perspective, the combination of <b> Bitcoin- Ethereum- Tron-Binance- 
-    Lumber - DJIA- Gold- Corn </b> can give us an R-squared of <b> 85.22% </b> 
+    Lumber - DJIA- Gold- Corn- Crude Oil </b> can give us an R-squared of <b> 85.22% </b> 
 of the price variation with the price of NEO from its inception. In layman's terms, this means that 
-    over 85% of the price variation in NEO can be explained from the variation of those 8 variables, with the majority from Ethereum and Tron, 
+    over 85% of the price variation in NEO can be explained from the variation of those 9 variables, with the majority from Ethereum and Tron, 
     and the rest from a sprinkling of the remaining factors. 
    However, if we are looking to build a predictive model that excludes forecasting the price of Bitcoin or Ethereum,  
     then the following combinations would be worth exploring: </p>
@@ -301,7 +298,7 @@ of the price variation with the price of NEO from its inception. In layman's ter
   <p> 2) Lumber- Tron- Crude Oil- Corn (51.42%) </p>
   <p> 3) Lumber - Crude Oil- Corn-Gold (38.05%) </p>
   <p> 4) Lumber - Crude Oil- Corn (28%)</p>
-  <p> Forecasting the latter 2 combinations may be more feasible since they exclude forecasting the price of Tron or any other cryptocurrency. 
+  <p> Forecasting the latter 2 combinations may be more feasible than the first two since they exclude forecasting the price of Tron or DJIA. 
     Future articles <i> may </i> focus on forecasting the price of other commodities singularly and in aggregate, as well as attempt
     to forecast the price of the aforementioned cryptos. 
   
