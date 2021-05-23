@@ -216,7 +216,7 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
   <p>
     From a purely observational perspective, this information is actually quite valuable. Generally speaking, 
     an r-squared correlation above 80% provides means that our model provides a high degree of confidence that our variables, in aggregate, are 
-    accurately predicting our desired outcome, which is the price. Running the vif() function on the dataset, however, shows 
+    accurately predicting our dependent variable, which is the price. Running the vif() function on the dataset, however, shows 
     that there is high multicollinearity between the variables,
     which is really not a surprise since we know that many of the variables are bound to move together 
     (i.e. cryptos often move together as a group, as do commodities). Therefore, they aren't truly independent. 
@@ -226,12 +226,12 @@ Multiple R-squared:  0.8535, <br>	Adjusted R-squared:  0.8522
             17.980369   19.008947    6.183506    4.504967    3.166828    4.191164    1.476786    5.305859
           </p3>
     </p>
-    <p> We can see from the above that the VIF for ETH and BTC are well above 5, as are Lumber and Corn. 
+    <p> We can see from the above that the VIF for ETH and BTC are well above 5, as are Lumber and Corn, to a much smaller degree. 
       For informational purposes, however. this doesn't really matter to us. 
       After all, if we are looking to just understand the price of NEO, then it doesn't really matter to us if 
       ETH and BTC are dependent on the same factors. That said, however, as forecasters, we do care that these factors are not 
       truly independent, because it is hard for us to forecast these factors in isolation. After all, we are looking to forecast 
-      the price of NEO, but if we can't forecast the price of ETH, BTC or Tron in isolation, then this model is of 
+      the price of NEO, but if we can't forecast the price of ETH, BTC or Tron, then this model is of 
       little or no use to us. Therefore, we should remove these factors until we can get to a model that contains factors that
       are independent and that we feel comfortable analyzing and forecasting in isolation.  
        <p>    
