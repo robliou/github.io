@@ -23,6 +23,11 @@ button{
     height: 40px;
 }
 
+#test{
+    height: 40px;
+    width: 80px;
+}
+
 #login{
     position: relative;
     left: 500px;
@@ -30,6 +35,8 @@ button{
     width: 100px;
     
 }
+
+
 
 #register{
     position: relative;
